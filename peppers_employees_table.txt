@@ -1,0 +1,74 @@
+CREATE SCHEMA peppers; 
+
+USE peppers;
+
+CREATE TABLE employees (
+employee_id INT PRIMARY KEY AUTO_INCREMENT,
+first_name VARCHAR(30),
+last_name VARCHAR(30),
+marital_status VARCHAR(20),
+gender CHAR(1), 
+date_of_birth DATE ,
+ethnicity VARCHAR(20),
+education VARCHAR(20), 
+state VARCHAR(20) DEFAULT 'Washington',
+city VARCHAR(30) DEFAULT 'Seattle',
+date_of_hire DATE, 
+employment_status VARCHAR(20) DEFAULT 'Current',
+salary INT, 
+job_id INT,
+department_id INT, 
+manager_id INT,
+separation_date DATE,
+absences INT
+);
+
+
+INSERT INTO employees VALUES (1, 'Roger', 'Belk', 'Married', 'M', '1979-12-09', 'Hispanic', 'Bachelors', 'Washington', 'Bellevue', '2003-07-13', 'Current', 567000, 01, 001, null, null, 18);
+
+INSERT INTO employees VALUES (2, 'Vivian', 'Chang', 'Married', 'F', '1985-09-23', 'Asian', 'Masters', 'Washington', 'Renton', '2008-08-29','Current', 250870, 02, 001, 1, null, 14);
+
+INSERT INTO employees VALUES (3, 'Mike', 'Oakley', 'Single', 'M', '1974-07-30', 'White', 'Bachelors', 'Oregon', 'Portland', '2025-09-01','Current', 105000, 05, 005, 2, null, 05);
+
+INSERT INTO employees VALUES(4, 'Joan', 'Balder', 'Married', 'F', '1983-02-15', 'Asian', 'Masters', 'California', 'Los Angeles', '2018-04-01', 'Current', 125000, 03, 003, 2, null, 3);
+
+INSERT INTO employees VALUES(5, 'Bob', 'Parker', 'Single', 'M', '1989-03-09', 'White', 'Bachelors', 'Oregon', 'Salem', '2009-03-18',  'Current', 89000, 06, 005, 3, null, 20); 
+
+
+
+INSERT INTO employees VALUES
+(6, 'Alice', 'Johnson', 'Single', 'F', '1990-05-15', 'White', 'Bachelors', 'Washington', 'Spokane', '2012-07-20', 'Current', 92000, 06, 005, 3, null, 15),
+(7, 'John', 'Smith', 'Married', 'M', '1985-09-27', 'White', 'Masters', 'Idaho', 'Boise', '2007-11-10', 'Current', 85000, 06, 005, 3, null, 18),
+(8, 'Emily', 'Davis', 'Single', 'F', '1992-12-03', 'White', 'Bachelors', 'Oregon', 'Portland', '2015-02-28', 'Current', 87000, 07, 005, 3, null, 17),
+(9, 'Michael', 'Brown', 'Married', 'M', '1987-07-18', 'White', 'PhD', 'Washington', 'Tacoma', '2010-09-14', 'Current', 94000, 06, 005, 3, null, 19),
+(10, 'Emma', 'Martinez', 'Single', 'F', '1994-11-22', 'Hispanic', 'Bachelors', 'Idaho', 'Coeur d\'Alene', '2017-05-06', 'Resigned', 90000, 07, 005, 3, '2023-09-30', 16),
+(11, 'Sophia', 'Garcia', 'Single', 'F', '1993-08-07', 'Hispanic', 'Bachelor', 'Washington', 'Bellevue', '2016-04-15', 'Current', 86000, 06, 005, 3, NULL, 22),
+(12, 'Ethan', 'Nguyen', 'Married', 'M', '1988-10-25', 'Asian', 'Master', 'Oregon', 'Eugene', '2011-12-28', 'Current', 88000, 06, 005, 3, NULL, 16),
+(13, 'Ava', 'Kim', 'Single', 'F', '1995-02-14', 'Asian', 'Bachelor', 'Idaho', 'Meridian', '2018-08-03', 'Resigned', 91000, 07, 005, 3, '2023-05-19', 18),
+(14, 'Noah', 'Gonzalez', 'Married', 'M', '1986-06-30', 'Hispanic', 'PhD', 'Washington', 'Olympia', '2009-09-22', 'Current', 93000, 07, 005, 3, NULL, 19),
+(15, 'Olivia', 'Patel', 'Single', 'F', '1994-12-18', 'Asian', 'Bachelor', 'Oregon', 'Salem', '2014-01-09', 'Resigned', 87000, 06, 005, 3, '2022-11-30', 17),
+(16, 'Liam', 'Martinez', 'Married', 'M', '1989-04-03', 'Hispanic', 'Master', 'Washington', 'Seattle', '2012-05-18', 'Current', 95000, 07, 005, 3, NULL, 21),
+(17, 'Charlotte', 'Wang', 'Single', 'F', '1991-11-01', 'Asian', 'Bachelor', 'Idaho', 'Boise', '2015-07-26', 'Current', 89000, 06, 005, 3, NULL, 20),
+(18, 'Alexander', 'Chen', 'Married', 'M', '1987-03-12', 'Asian', 'PhD', 'Oregon', 'Portland', '2010-10-08', 'Resigned', 92000, 07, 005, 3, '2023-03-15', 19),
+(19, 'Isabella', 'Garcia', 'Married', 'F', '1990-05-27', 'Hispanic', 'Bachelor', 'Washington', 'Bellevue', '2013-07-20', 'Current', 185000, 14, 003, 4, null, 3),
+(20, 'Sophia', 'Tanaka', 'Single', 'F', '1992-08-15', 'Japanese', 'Bachelor', 'Washington', 'Seattle', '2015-03-12', 'Current', 175000, 13, 003, 4, NULL, 5),
+(21, 'Mia', 'Nguyen', 'Single', 'F', '1994-04-20', 'Hispanic', 'Master', 'Colorado', 'Denver', '2017-09-28', 'Current', 165000, 13, 003, 4, NULL, 10),
+(22, 'Emma', 'Martinez', 'Single', 'F', '1995-11-02', 'White', 'PhD', 'Florida', 'Miami', '2016-05-05', 'Current', 160000, 13, 003, 4, NULL, 15),
+(23, 'Olivia', 'Smith', 'Single', 'F', '1991-07-30', 'Black', 'Bachelor', 'California', 'Los Angeles', '2014-08-18', 'Current', 155000, 13, 003, 4, NULL, 5),
+(24, 'Ava', 'Gonzalez', 'Married', 'F', '1989-02-12', 'White', 'Master', 'Washington', 'Spokane', '2012-11-25', 'Current', 150000, 12, 003, 4, NULL, 22),
+(25, 'Amelia', 'Lopez', 'Single', 'F', '1993-10-05', 'Hispanic', 'Bachelor', 'California', 'San Francisco', '2018-12-10', 'Current', 145000, 12, 003, 4, NULL, 3),
+(26, 'Ethan', 'Johnson', 'Married', 'M', '1990-09-18', 'White', 'Bachelor', 'Colorado', 'Boulder', '2013-10-15', 'Current', 125000, 11, 003, 4, NULL, 22),
+(27, 'James', 'Wong', 'Single', 'M', '1993-05-25', 'Asian', 'Master', 'California', 'San Diego', '2016-08-22', 'Current', 120000, 11, 003, 4, NULL, 9),
+(28, 'Lucas', 'Gomez', 'Married', 'M', '1988-12-10', 'Hispanic', 'PhD', 'Washington', 'Tacoma', '2019-03-30', 'Resigned', 115000, 12, 003, 4, '2023-01-15', 17),
+(29, 'Henry', 'Chen', 'Single', 'M', '1992-04-03', 'Asian', 'Bachelor', 'Florida', 'Orlando', '2014-11-18', 'Current', 110000, 11, 003, 4, NULL, 11),
+(30, 'Benjamin', 'Lee', 'Married', 'M', '1989-10-22', 'Asian', 'Master', 'California', 'San Francisco', '2017-06-12', 'Current', 105000, 11, 003, 4, NULL, 22),
+(31, 'Michael', 'Rivera', 'Single', 'M', '1991-02-28', 'Hispanic', 'Bachelor', 'Washington', 'Seattle', '2015-09-05', 'Terminated', 95000, 10, 003, 4, '2023-07-20', 52),
+(32, 'Emily', 'Lopez', 'Single', 'F', '1993-08-27', 'Hispanic', 'Bachelor', 'Colorado', 'Denver', '2016-05-10', 'Current', 60000, 19, 008, 2, NULL, 15),
+(33, 'Daniel', 'Smith', 'Married', 'M', '1990-04-15', 'White', 'Bachelor', 'Florida', 'Miami', '2013-12-28', 'Current', 55000, 15, 008, 32, NULL, 18),
+(34, 'Abigail', 'Wang', 'Single', 'F', '1992-10-22', 'Asian', 'Master', 'California', 'Los Angeles', '2018-09-15', 'Current', 50000, 16, 008, 32, NULL, 39),
+(35, 'Ella', 'Garcia', 'Single', 'F', '1995-06-30', 'Hispanic', 'Bachelor', 'Washington', 'Seattle', '2015-08-20', 'Resigned', 45000, 16, 008, 32, '2023-02-10', 60),
+(36, 'David', 'Johnson', 'Single', 'M', '1991-12-18', 'Black', 'Bachelor', 'California', 'San Francisco', '2017-10-10', 'Current', 40000, 15, 008, 32, NULL, 56),
+(37, 'Harper', 'Nguyen', 'Married', 'F', '1989-03-05', 'Asian', 'PhD', 'Washington', 'Bellevue', '2014-06-12', 'Current', 55000, 16, 008, 32, NULL, 60),
+(38, 'William', 'Gomez', 'Married', 'M', '1987-07-12', 'Hispanic', 'Bachelor', 'Florida', 'Tampa', '2011-09-30', 'Terminated', 35000, 15, 008, 32, '2023-05-20', 78),
+(39, 'Avery', 'Lee', 'Single', 'F', '1994-11-08', 'Asian', 'Master', 'Colorado', 'Colorado Springs', '2019-04-25', 'Current', 60000, 16, 008, 32, NULL, 26),
+(40, 'Madison', 'Chen', 'Single', 'F', '1993-09-14', 'Asian', 'Bachelor', 'Washington', 'Redmond', '2016-08-05', 'Current', 57000, 16, 008, 32, NULL, 40);
